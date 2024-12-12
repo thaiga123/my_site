@@ -42,3 +42,45 @@ body{
 .btn:hover {
     background-color: #0056b3;
 }
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px #007BFF, 0 0 20px #007BFF, 0 0 30px #007BFF;
+    }
+    50% {
+        box-shadow: 0 0 20px #0056b3, 0 0 40px #0056b3, 0 0 60px #0056b3;
+    }
+    100% {
+        box-shadow: 0 0 10px #007BFF, 0 0 20px #007BFF, 0 0 30px #007BFF;
+    }
+}
+
+img {
+    display: grid;
+    grid-row: 2;
+    border-radius: 50%; /* Makes the image circular */
+    border: 5px solid white; /* Adds a border around the image */
+    animation: glow 3s infinite; /* Applies the glowing animation */
+}
+
+@keyframes textGlow {
+    0% {
+        text-shadow: 0 0 10px #007BFF, 0 0 20px #007BFF, 0 0 30px #007BFF;
+    }
+    50% {
+        text-shadow: 0 0 20px #0056b3, 0 0 40px #0056b3, 0 0 60px #0056b3;
+    }
+    100% {
+        text-shadow: 0 0 10px #007BFF, 0 0 20px #007BFF, 0 0 30px #007BFF;
+    }
+}
+
+h1 {
+    background-color: black;
+    color: white;
+    display: grid;
+    padding: 5px 20px; /* Combine padding for simplicity */
+    font-family: cursive;
+    grid-row: 1;
+    animation: textGlow 3s infinite; /* Applies the glowing effect to text */
+}

@@ -2,52 +2,78 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable-no">
     <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
     <title>About</title>
 </head>
 <body>
-    <h2 class="heading">About me</h2>
-        <p class="block">
-            Hi there! 👋 I’m AJ, a curious mind with a passion for coding, learning, and making the most of every day. 
-            Welcome to my little corner of the internet!</p>
 
-    <h2 class="heading">What I'm all about</h2>
-        <p class="block">
-            I’ve completed my Python course and am now diving even deeper into the language. I’m using my knowledge 
-            to build real-world projects—like this very website! <br>Along the way, I’ve also become familiar with:
-        </p>
+    <heading_one_container>
+        <h2 id="heading_one">About me</h2>
+    </heading_one_container>
+        <second_block>
+            <p class="block" id="block_1">
+            Hi there! 👋 I’m AJ, a curious mind with a passion for<br>
+            coding, learning, and making the most of every day. Welcome<br>
+            to my little corner of the internet!</p><br>
 
-    <ul class="block">
+    <h2 class="heading" id="heading_two">What I'm all about</h2>
+        <block_container>    
+            <p class="block" id="block_2_part_1">
+                I’ve completed my Python course and am now diving even deeper<br>
+                into the language. I’m using my knowledge to build real-world projects—like<br>
+                this very website! Along the way, I’ve also become familiar with:
+            </p><br>
+    <ul class="block" id="block_2_part_2">
         <li><b>HTML and CSS</b>-for crafting beautiful websites.</li>
-        <li><b>JavaScript and MySQL</b>-which I'm currently learning to enhance my web development and
-            project-building skills.</li>
-    </ul>
-    
-        <p class="block">I code daily, keep exploring, and love discovering new tools and techniques to expand my knowledge.</p>
-        
-    <h2 class="heading">My Interests</h2>
-    <p class="block" style="font-size:18px">When I'm not coding, you'll find me:</p>
+        <li><b>JavaScript and MySQL</b>-which I'm currently learning to<br>
+        enhance my web development and project-building skills.</li>
+    </ul><br>
+        <p class="block" id="four">
+            I code daily, keep exploring, and love discovering new tools and 
+            techniques to expand my knowledge.
+        </p>
+        </block_container><br>
 
+
+<h2 class="heading" id="heading_four">
+    My Interests
+</h2>
+<third_block>
+    <p id="parts" class="block" style="font-size:18px">
+        <u><part_1>
+                When I'm not coding
+            </part_1>,
+            <part_2>
+                you'll find me:
+            </part_2></u></p>
+<br>
     <ul class="block">
-        <li>Watching videos about <b>tech, cybersecurity, and AI</b>
-            —topics that keep me inspired and informed.</li>
-        <li>Playing <b>chess</b> – a game I enjoy to relax and sharpen my
-            strategic thinking.</li>
-        <li>Listening to music – I love a variety of genres, from
-            classical to modern hits.</li>
-        <li>Improving my <b>productivity</b> and learning how to
-            make the most out of each day.</li>
-        <li><b>Working out</b>, staying active, and challenging myself
+        <li><u><b>Working out</b></u>, staying active, and challenging myself
             physically.</li>
-        <li>Spending time with my <b>dog</b>, who never fail to
+        <li><u>Spending time with my <b>dog</b></u>, who never fail to
             brighten my day.</li>
-    </ul>
+        <li><u>Playing <b>chess</b></u> – a game I enjoy to relax and sharpen my
+            strategic thinking.</li>
+        <li><u>Listening to music</u> – I love a variety of genres, from
+            classical to modern hits.</li>
+        <li><u>Improving my <b>productivity</b></u> and learning how to
+            make the most out of each day.</li>
+        <li><u>Watching videos</u> about <b>tech, cybersecurity, and AI</b>
+            —topics that keep me inspired and informed.</li>
+        </ul>
+    </third_block>
+<br>
 
-    <h2 class="heading">Why I Build This Website</h2>
-    <p class="block">This website is a reflection of who I am and what I love doing. It’s a space to share my journey in coding, ethical<br>
-        hacking, and personal growth while connecting with like-minded individuals. Whether you’re here to learn, explore,<br>
-        or just get inspired, I hope you enjoy your visit! <br><br>Thanks for stopping by! 😊</p>
 
+<h2 class="heading" id="heading_four">Why I Build This Website</h2>
+    <block_4>
+        <p class="block"  id="five">This website is a reflection of who I am and what I love doing. It’s a space to share my journey in coding, ethical<br>
+            hacking, and personal growth while connecting with like-minded individuals. Whether you’re here to learn, explore,<br>
+            or just get inspired, I hope you enjoy your visit! <br><br>Thanks for stopping by! 😊</p><br><br><br>
+    </block_4>
+        </second_block>
+
+    
 </body>
 </html>
