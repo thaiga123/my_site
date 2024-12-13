@@ -1,135 +1,132 @@
-body{
-    margin-left:30px;
-    margin-top:50px;
-    margin-bottom:100px;
-    background-image:url("data:image/jpeg;base64,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");
-    text-align:center
+/* General Body Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #121212; /* Dark theme background */
+    color: #e0e0e0; /* Light text for contrast */
+    line-height: 1.6;
 }
 
-heading_one_container{
-    background-color: black;
-    padding-left:580px;
-    padding-right:590px;
-    padding-top: 80px;
-    padding-bottom: 15px;
-    border: 1px solid black;
+/* Container for Layout */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-
-.heading{
-    background-color:black;
-    color: white;
-    text-shadow:0px 1px 1px red;
-    border: 1px solid black;
-    padding-right:10px;
-    padding-left:10px;
-    padding-top:10px;
-    padding-bottom:10px;
-    margin-top:0;
-    margin-bottom:0;
-    margin-left:1px;
-    margin-right:1px
+/* Global Header Styles */
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #fff;
+    margin: 40px 0 20px;
+    padding: 10px;
+    position: relative;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, #ff416c, #ff4b2b); /* Vibrant gradient */
+    box-shadow: 0px 4px 15px rgba(255, 65, 108, 0.5); /* Glow effect */
+    border-radius: 10px;
+    overflow: hidden;
+    animation: slideIn 1s ease-in-out;
 }
 
-#heading_one{
-    display: inline-block;
-    border: 5px solid black;
-    border-style:groove;
-    padding-right:10px;
-    padding-left:10px;
-    background-color: rgb(255, 255, 255);
-    background-color:white;
-    color: black;
-    text-shadow: 0px 1px 1px white;
-    margin-bottom:0px
+/* Header Glow Animation */
+h2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: skewX(-45deg);
+    filter: blur(8px);
+    transition: all 0.5s;
+    animation: moveGlow 3s infinite;
 }
 
-.block{
-    font-family:cursive;
-    background-color:white;
-    display:inline-block
+h2:hover::before {
+    left: 100%;
 }
 
-#block_1{
-    padding-left: 425px;
-    padding-right: 425px;
-    padding-top:30px;
-    padding-bottom:20px;
-    border: 1px solid black;
-    margin-top:8px;
-    margin-bottom:0px
+/* Section Spacing */
+div {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05); /* Subtle overlay */
+    margin: 20px 0;
+    border-radius: 15px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
 }
 
-#block_2_part_1{
-    padding-left:390px;
-    padding-right:350px;
-    padding-top:30px;
-    padding-bottom:5px;
-    margin-bottom:0;
-    margin-top:0
+/* Header Hover Animation */
+h2:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
 }
 
-#block_2_part_2{
-    margin-top:0;
-    margin-bottom:0px
+/* Fancy Underline */
+h2::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 4px;
+    background-color: #fff;
+    margin: 10px auto 0;
+    border-radius: 2px;
+    animation: growLine 1s ease-in-out;
 }
 
-
-h2 + p{
-    margin-top:0
+/* Keyframe Animations */
+@keyframes moveGlow {
+    0% {
+        left: -50%;
+    }
+    50% {
+        left: 10%;
+    }
+    100% {
+        left: 100%;
+    }
 }
 
-ul {
-    list-style-position: inside;
-    line-height: 2
-  }
-
-#parts{
-    margin-top:0;
-    margin-bottom:0;
-    padding-top:30px;
-    padding-bottom:1px;
-    padding-right:496px;
-    padding-left:495px;
-    
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-part_1{
-    color:red
+@keyframes growLine {
+    from {
+        width: 0;
+    }
+    to {
+        width: 50px;
+    }
 }
 
-part_2{
-    color: green
+/* General Paragraph Styles */
+p {
+    font-size: 1rem;
+    color: #ccc;
+    line-height: 1.8;
+    margin-top: 10px;
 }
 
-#four{
-    margin-top:0;
-    margin-bottom:0;
-    padding-bottom:20px
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2rem;
+    }
 
-block_container{
-    display:inline-block;
-    border:1px solid black;
-    background-color: white;
-}
-
-third_block{
-    border:1px solid black;
-    display: inline-block;
-    background-color: white;
-}
-
-block_4{
-    display: inline-block;
-    border:1px solid black;
-    background-color: white;
-}
-
-#five{
-    margin-top:0;
-    margin-bottom:0;
-    padding-top:20px;
-    padding-left:226px;
-    padding-right:226px;
+    p {
+        font-size: 0.9rem;
+    }
 }
