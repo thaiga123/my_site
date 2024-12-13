@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Alfred-John Meyer</title>
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='resume.css') }}">
+</head>
+<body>
+    <div class="resume-container">
+
+        <section>
+            <h2>My Resume</h2>
+            <p>View my full resume below:</p>
+            <!-- Embed PDF Resume -->
+            <iframe src="{{ url_for('static', filename='resume.pdf') }}" class="pdf-viewer" title="PDF Resume"></iframe>
+        </section>
+
+        <footer>
+            <p>© 2024 Alfred-John Meyer</p>
+        </footer>
+    </div>
+</body>
+</html>
