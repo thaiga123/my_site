@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AJ's Blogs</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        /* Custom CSS for text color */
+        h1, h2, h3, p {
+            color: black;
+        }
+    </style>
 </head>
 <body>
     <div class="blogs-container">
@@ -33,7 +39,7 @@
             {% for blog in blogs %}
             <div class="blog">
                 <h3>{{ blog.title }}</h3>
-                <p>{{ blog.content }}</p>
+                <p>{{ blog.content|safe }}</p> <!-- Ensure line breaks are handled properly -->
                 <div class="blog-actions">
                     <a href="{{ url_for('blog_detail', blog_id=blog.id) }}" class="view-btn">View</a>
                     {% if is_admin %}

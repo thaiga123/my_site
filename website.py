@@ -1,8 +1,9 @@
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, session, flash
 import json
+import os
 
 app = Flask(__name__, static_folder="static")
-app.secret_key = "your_secret_key"  # Required for session handling
+app.secret_key = "your_secret_key"  # Replace with a secure secret key
 
 BLOGS_FILE = "blogs.json"
 ADMIN_PASSWORD = "V3@6y@j1"  # Replace with a secure password
@@ -40,7 +41,7 @@ def login():
             session["admin"] = True
             return redirect(url_for("blogs"))
         else:
-            return "Invalid password!", 403
+            flash("Invalid password!", "danger")
     return render_template("login.html")
 
 @app.route("/logout")
@@ -61,12 +62,13 @@ def blogs():
             new_blog = {
                 "id": len(blogs) + 1,
                 "title": title,
-                "content": content,
+                "content": content.replace("\n", "<br>"),  # Handle line breaks
                 "likes": 0,
                 "comments": []
             }
             blogs.append(new_blog)
             save_blogs(blogs)
+        flash("New blog added successfully!", "success")
         return redirect(url_for("blogs"))
 
     return render_template("blogs.html", blogs=blogs, is_admin=is_admin)
@@ -87,6 +89,7 @@ def blog_detail(blog_id):
             if comment:
                 blog["comments"].append(comment)
         save_blogs(blogs)
+        flash("Action successful!", "success")
         return redirect(url_for("blog_detail", blog_id=blog_id))
 
     return render_template("blog_detail.html", blog=blog)
@@ -99,6 +102,7 @@ def delete_blog(blog_id):
     blogs = load_blogs()
     blogs = [b for b in blogs if b["id"] != blog_id]
     save_blogs(blogs)
+    flash("Blog deleted successfully!", "success")
     return redirect(url_for("blogs"))
 
 if __name__ == "__main__":
