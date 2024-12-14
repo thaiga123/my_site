@@ -3,23 +3,52 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa;
+    background: linear-gradient(to bottom right, #6a11cb, #2575fc);
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    animation: backgroundAnimation 10s infinite alternate;
+    color: #000;
+}
+
+/* Smooth Background Animation */
+@keyframes backgroundAnimation {
+    0% {
+        background: linear-gradient(to bottom right, #6a11cb, #2575fc);
+    }
+    50% {
+        background: linear-gradient(to bottom right, #34e89e, #0f3443);
+    }
+    100% {
+        background: linear-gradient(to bottom right, #fc4a1a, #f7b733);
+    }
 }
 
 /* Containers */
 .login-container, .blogs-container, .blog-detail-container {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     max-width: 600px;
     width: 100%;
-    margin: 20px;
     text-align: center;
+    animation: fadeIn 1s ease-out;
+    color: #000
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Buttons */
@@ -27,59 +56,119 @@ button, a {
     display: inline-block;
     padding: 10px 20px;
     border: none;
-    border-radius: 4px;
+    border-radius: 30px;
     color: white;
-    background: #007BFF;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
     text-decoration: none;
     cursor: pointer;
-    margin: 5px 0;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    font-size: 1rem;
+    margin: 10px 0;
 }
 
 button:hover, a:hover {
-    background: #0056b3;
+    transform: scale(1.1);
+    background: linear-gradient(to right, #34e89e, #0f3443);
 }
 
-.logout-btn, .login-btn {
-    background: #dc3545;
+/* Button Ripple Effect */
+button::before, a::before {
+    content: '';
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.6s ease-out;
+    border-radius: 50%;
+    z-index: 1;
+    pointer-events: none;
 }
 
-.logout-btn:hover, .login-btn:hover {
-    background: #c82333;
+button:hover::before, a:hover::before {
+    transform: translate(-50%, -50%) scale(1);
 }
 
-.delete-btn {
-    background: #dc3545;
-}
-
-.delete-btn:hover {
-    background: #c82333;
+button, a {
+    z-index: 2;
 }
 
 /* Forms */
 input, textarea {
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 15px;
+    margin: 15px 0;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    transition: border 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
 }
 
-textarea {
-    resize: vertical;
-    height: 100px;
+input:focus, textarea:focus {
+    border: 2px solid #6a11cb;
+    outline: none;
+    color: #100
 }
 
 /* Blog List */
 .blog {
-    border-bottom: 1px solid #ccc;
-    padding: 15px 0;
+    margin: 20px 0;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(20px);
+    opacity: 0;
+    animation: slideIn 1s ease-out forwards;
+    animation-delay: calc(0.2s * var(--i));
+    color:#000
 }
 
-.blog:last-child {
-    border-bottom: none;
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* Comments Section */
+/* Blog Title Animation */
+.blog h3 {
+    font-size: 1.5rem;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glowText 3s infinite;
+    color:#000
+}
+
+@keyframes glowText {
+    0%, 100% {
+        text-shadow: 0 0 5px #2575fc, 0 0 10px #2575fc;
+    }
+    50% {
+        text-shadow: 0 0 10px #34e89e, 0 0 20px #34e89e;
+    }
+}
+
+/* Blog Actions */
+.blog-actions a {
+    margin: 5px;
+    font-size: 0.9rem;
+    color:#000
+}
+
+/* Comment Section */
 .likes-comments ul {
     list-style: none;
     padding: 0;
@@ -88,4 +177,9 @@ textarea {
 .likes-comments ul li {
     margin: 10px 0;
     text-align: left;
+    background: rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color:#000
 }
