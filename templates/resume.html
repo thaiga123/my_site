@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume - Alfred-John Meyer</title>
+    <title>CV - Alfred-John Meyer</title>
     <!-- Link to CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='resume.css') }}">
 </head>
@@ -11,8 +11,8 @@
     <div class="resume-container">
 
         <section>
-            <h2>My Resume</h2>
-            <p>View my full resume below:</p>
+            <h2>My CV</h2>
+            <p>View my full CV below:</p>
             <!-- Embed PDF Resume -->
             <iframe src="{{ url_for('static', filename='resume.pdf') }}" class="pdf-viewer" title="PDF Resume"></iframe>
         </section>
