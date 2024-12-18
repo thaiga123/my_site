@@ -6,12 +6,14 @@
     <title>CV - Alfred-John Meyer</title>
     <!-- Link to CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='resume.css') }}">
+    <link rel="icon" href="{{url_for('static', filename='AJ_Meyer.png')}}">
 </head>
 <body>
     <div class="resume-container">
 
         <section>
             <h2>My CV</h2>
+            <h4>Note: Certain details have been omitted for privacy reasons. If you'd like to get in touch, please use the email provided.</h4>
             <p>View my full CV below:</p>
             <!-- Embed PDF Resume -->
             <iframe src="{{ url_for('static', filename='resume.pdf') }}" class="pdf-viewer" title="PDF Resume"></iframe>
