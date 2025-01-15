@@ -10,23 +10,21 @@
 <body>
     <div class="container">
         <header>
-            <img src="{{ url_for('static', filename='AJ_Meyer.png') }}" width="250px" height="250px">
+            <img src="{{ url_for('static', filename='AJ_Meyer.png') }}" width="250px" height="250px" class="profile-image">
             <h1 class="title">Hello, I'm AJ Meyer!</h1>
             <p class="subtitle">Welcome to my personal space.</p>
         </header>
 
-    <main>
-        <nav class="navigation">
-            <a href="{{ url_for('about') }}" class="nav-button">About me</a>
-            <a href="{{ url_for('resume') }}" class="nav-button">My CV</a>
-            <a href="{{ url_for('blogs') }}" class="nav-button">Blogs</a>
-        </nav>
-    </main>
-    <footer>
-        <p class="footer-text">© 2024 AJ Meyer | Crafted with passion</p>
-    </footer>
-
-
+        <main>
+            <nav class="navigation">
+                <a href="{{ url_for('about') }}" class="nav-button">About me</a>
+                <a href="{{ url_for('resume') }}" class="nav-button">My CV</a>
+                <a href="{{ url_for('blogs') }}" class="nav-button">Blogs</a>
+            </nav>
+        </main>
+        <footer>
+            <p class="footer-text">© 2024 AJ Meyer | Crafted with passion</p>
+        </footer>
+    </div>
 </body>
-
 </html>

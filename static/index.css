@@ -36,6 +36,30 @@ body {
     border-radius: 50%;
     border: 5px solid #ff7e00; /* Orange border for emphasis */
     margin-bottom: 20px;
+    position: relative;
+    animation: fallAndBounce 1.2s ease-in-out forwards;
+}
+
+/* Fall and Bounce Animation */
+@keyframes fallAndBounce {
+    0% {
+        transform: translateY(-200%) scale(1); /* Start above the viewport */
+    }
+    40% {
+        transform: translateY(0) scale(1.2); /* Impact with slight scale */
+    }
+    60% {
+        transform: translateY(-20px) scale(1); /* First bounce */
+    }
+    80% {
+        transform: translateY(0) scale(1.05); /* Second bounce */
+    }
+    90% {
+        transform: translateY(-10px) scale(1); /* Smaller bounce */
+    }
+    100% {
+        transform: translateY(0) scale(1); /* Resting state */
+    }
 }
 
 /* Title and Subtitle Styling */
