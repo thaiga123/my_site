@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom right, #6a11cb, #2575fc);
+    background: linear-gradient(to bottom right, #ff7f50, #ffa07a);
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -15,7 +15,7 @@ body {
 /* Smooth Background Animation */
 @keyframes backgroundAnimation {
     0% {
-        background: linear-gradient(to bottom right, #6a11cb, #2575fc);
+        background: linear-gradient(to bottom right, #ff7f50, #ffa07a);
     }
     50% {
         background: linear-gradient(to bottom right, #34e89e, #0f3443);
@@ -36,7 +36,7 @@ body {
     width: 100%;
     text-align: center;
     animation: fadeIn 1s ease-out;
-    color: #000
+    color: #000;
 }
 
 /* Fade-in Animation */
@@ -58,7 +58,7 @@ button, a {
     border: none;
     border-radius: 30px;
     color: white;
-    background: linear-gradient(to right, #6a11cb, #2575fc);
+    background: linear-gradient(to right, #ff7f50, #ffa07a);
     text-decoration: none;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
@@ -70,7 +70,7 @@ button, a {
 
 button:hover, a:hover {
     transform: scale(1.1);
-    background: linear-gradient(to right, #34e89e, #0f3443);
+    background: linear-gradient(to right, #ff6347, #ff4500);
 }
 
 /* Button Ripple Effect */
@@ -111,9 +111,9 @@ input, textarea {
 }
 
 input:focus, textarea:focus {
-    border: 2px solid #6a11cb;
+    border: 2px solid #ff7f50;
     outline: none;
-    color: #100
+    color: #000;
 }
 
 /* Blog List */
@@ -127,7 +127,7 @@ input:focus, textarea:focus {
     opacity: 0;
     animation: slideIn 1s ease-out forwards;
     animation-delay: calc(0.2s * var(--i));
-    color:#000
+    color: #000;
 }
 
 @keyframes slideIn {
@@ -144,20 +144,20 @@ input:focus, textarea:focus {
 /* Blog Title Animation */
 .blog h3 {
     font-size: 1.5rem;
-    background: linear-gradient(to right, #6a11cb, #2575fc);
+    background: linear-gradient(to right, #ff7f50, #ffa07a);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: glowText 3s infinite;
-    color:#000
+    color: #000;
 }
 
 @keyframes glowText {
     0%, 100% {
-        text-shadow: 0 0 5px #2575fc, 0 0 10px #2575fc;
+        text-shadow: 0 0 5px #ffa07a, 0 0 10px #ffa07a;
     }
     50% {
-        text-shadow: 0 0 10px #34e89e, 0 0 20px #34e89e;
+        text-shadow: 0 0 10px #ff6347, 0 0 20px #ff6347;
     }
 }
 
@@ -165,7 +165,7 @@ input:focus, textarea:focus {
 .blog-actions a {
     margin: 5px;
     font-size: 0.9rem;
-    color:#000
+    color: #000;
 }
 
 /* Comment Section */
@@ -181,5 +181,5 @@ input:focus, textarea:focus {
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    color:#000
+    color: #000;
 }

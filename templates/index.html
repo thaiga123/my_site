@@ -8,13 +8,24 @@
     <title>Homepage</title>
 </head>
 <body>
-    <img src="{{ url_for('static', filename='AJ_Meyer.png') }}" width="250px" height="250px">
-    <h1>Welcome to my website!</h1>
+    <div class="container">
+        <header>
+            <img src="{{ url_for('static', filename='AJ_Meyer.png') }}" width="250px" height="250px">
+            <h1 class="title">Hello, I'm AJ Meyer!</h1>
+            <p class="subtitle">Welcome to my personal space.</p>
+        </header>
 
-    <!-- Buttons stacked vertically -->
-    <a href="{{ url_for('about') }}" class="btn">About me</a>
-    <a href="{{ url_for('resume') }}" class="btn">My CV</a>
-    <a href="{{ url_for('blogs') }}" class="btn">Blogs</a>
+    <main>
+        <nav class="navigation">
+            <a href="{{ url_for('about') }}" class="nav-button">About me</a>
+            <a href="{{ url_for('resume') }}" class="nav-button">My CV</a>
+            <a href="{{ url_for('blogs') }}" class="nav-button">Blogs</a>
+        </nav>
+    </main>
+    <footer>
+        <p class="footer-text">© 2025 AJ Meyer | Crafted with passion</p>
+    </footer>
+
 
 </body>
 
