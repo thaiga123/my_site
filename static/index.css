@@ -47,18 +47,28 @@ body {
     }
     40% {
         transform: translateY(0) scale(1.2); /* Impact with slight scale */
+
     }
     60% {
         transform: translateY(-20px) scale(1); /* First bounce */
+        transform: scale(1.05);
+        box-shadow: 0 0 0 15px rgba(255, 126, 0, 0.6);
+
     }
     80% {
         transform: translateY(0) scale(1.05); /* Second bounce */
+        transform: scale(1);
+        box-shadow: 0 0 0 5px rgba(255, 126, 0, 0.7);
     }
     90% {
         transform: translateY(-10px) scale(1); /* Smaller bounce */
+        transform: scale(1.05);
+        box-shadow: 0 0 0 15px rgba(255, 126, 0, 0.6);
     }
     100% {
         transform: translateY(0) scale(1); /* Resting state */
+        transform: scale(1);
+        box-shadow: 0 0 0 5px rgba(255, 126, 0, 0.5);
     }
 }
 
