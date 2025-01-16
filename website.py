@@ -33,6 +33,10 @@ def about():
 def resume():
     return render_template("resume.html")
 
+@app.route('/contact')
+def contact():
+    return render_template("contact.html")
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
