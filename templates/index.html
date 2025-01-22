@@ -3,9 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
     <link rel="icon" href="{{url_for('static', filename='AJ_Meyer.png')}}">
     <title>Homepage</title>
+    <style>
+        /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background: #f9f9f9; /* Light background for a clean look */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    margin-top: 20px;
+    padding-top: 50px
+}
+
+/* Container Styling */
+.container {
+    max-width: 600px;
+    width: 90%;
+    background: #ffffff; /* White background for the container */
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Profile Image Styling */
+.profile-image {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 5px solid #ff7e00; /* Orange border for emphasis */
+    margin-bottom: 20px;
+    position: relative;
+    animation: fallAndBounce 1.2s ease-in-out forwards;
+}
+
+/* Fall and Bounce Animation */
+@keyframes fallAndBounce {
+    0% {
+        transform: translateY(-200%) scale(1); /* Start above the viewport */
+    }
+    40% {
+        transform: translateY(0) scale(1.2); /* Impact with slight scale */
+
+    }
+    60% {
+        transform: translateY(-20px) scale(1); /* First bounce */
+        transform: scale(1.05);
+        box-shadow: 0 0 0 15px rgba(255, 126, 0, 0.6);
+
+    }
+    80% {
+        transform: translateY(0) scale(1.05); /* Second bounce */
+        transform: scale(1);
+        box-shadow: 0 0 0 5px rgba(255, 126, 0, 0.7);
+    }
+    90% {
+        transform: translateY(-10px) scale(1); /* Smaller bounce */
+        transform: scale(1.05);
+        box-shadow: 0 0 0 15px rgba(255, 126, 0, 0.6);
+    }
+    100% {
+        transform: translateY(0) scale(1); /* Resting state */
+        transform: scale(1);
+        box-shadow: 0 0 0 5px rgba(255, 126, 0, 0.5);
+    }
+}
+
+/* Title and Subtitle Styling */
+.title {
+    font-size: 2.5rem;
+    color: #333; /* Dark text for contrast */
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #666; /* Lighter gray for subtler text */
+    margin-bottom: 30px;
+}
+
+/* Navigation Styling */
+.navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Button Styling */
+.nav-button {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #ffffff;
+    background: #ff7e00; /* Bright orange buttons */
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    text-align: center;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.nav-button:hover {
+    background: #ff5700; /* Slightly darker orange on hover */
+    transform: translateY(-2px); /* Lift effect */
+}
+
+/* Footer Styling */
+.footer-text {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #888; /* Muted text for the footer */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .nav-button {
+        font-size: 1rem;
+        padding: 8px 15px;
+    }
+
+    .profile-image {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+    </style>
 </head>
 <body>
     <div class="container">
@@ -17,6 +156,7 @@
 
         <main>
             <nav class="navigation">
+                <a href="https://portfolio-on1f.onrender.com" class="nav-button">My projects</a>
                 <a href="{{ url_for('about') }}" class="nav-button">About me</a>
                 <a href="{{ url_for('resume') }}" class="nav-button">My CV</a>
                 <a href="{{ url_for('blogs') }}" class="nav-button">Blogs</a>
